@@ -88,6 +88,43 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "WhatsAppChat.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WhatsAppChat.Domain": "1.0.0",
+          "WhatsAppChat.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WhatsAppChat.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WhatsAppChat.Application.dll": {}
+        }
+      },
+      "WhatsAppChat.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/WhatsAppChat.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WhatsAppChat.Domain.dll": {}
+        }
+      },
+      "WhatsAppChat.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WhatsAppChat.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WhatsAppChat.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WhatsAppChat.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -439,11 +476,29 @@
         "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "WhatsAppChat.Application/1.0.0": {
+      "type": "project",
+      "path": "../WhatsAppChat.Application/WhatsAppChat.Application.csproj",
+      "msbuildProject": "../WhatsAppChat.Application/WhatsAppChat.Application.csproj"
+    },
+    "WhatsAppChat.Domain/1.0.0": {
+      "type": "project",
+      "path": "../WhatsAppChat.Domain/WhatsAppChat.Domain.csproj",
+      "msbuildProject": "../WhatsAppChat.Domain/WhatsAppChat.Domain.csproj"
+    },
+    "WhatsAppChat.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../WhatsAppChat.Infrastructure/WhatsAppChat.Infrastructure.csproj",
+      "msbuildProject": "../WhatsAppChat.Infrastructure/WhatsAppChat.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Swashbuckle.AspNetCore >= 6.6.2"
+      "Swashbuckle.AspNetCore >= 6.6.2",
+      "WhatsAppChat.Application >= 1.0.0",
+      "WhatsAppChat.Domain >= 1.0.0",
+      "WhatsAppChat.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -478,7 +533,17 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\source\\repos\\WhatsAppChat\\WhatsAppChat.Application\\WhatsAppChat.Application.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\WhatsAppChat\\WhatsAppChat.Application\\WhatsAppChat.Application.csproj"
+            },
+            "C:\\Users\\User\\source\\repos\\WhatsAppChat\\WhatsAppChat.Domain\\WhatsAppChat.Domain.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\WhatsAppChat\\WhatsAppChat.Domain\\WhatsAppChat.Domain.csproj"
+            },
+            "C:\\Users\\User\\source\\repos\\WhatsAppChat\\WhatsAppChat.Infrastructure\\WhatsAppChat.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\WhatsAppChat\\WhatsAppChat.Infrastructure\\WhatsAppChat.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

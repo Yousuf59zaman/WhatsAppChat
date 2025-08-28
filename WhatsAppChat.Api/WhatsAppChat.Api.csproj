@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WhatsAppChat.Application\WhatsAppChat.Application.csproj" />
+    <ProjectReference Include="..\WhatsAppChat.Domain\WhatsAppChat.Domain.csproj" />
+    <ProjectReference Include="..\WhatsAppChat.Infrastructure\WhatsAppChat.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

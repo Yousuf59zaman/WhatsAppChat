@@ -28,3 +28,10 @@ C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\obj\Debug\net8.0\refint
 C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\obj\Debug\net8.0\WhatsAppChat.Api.pdb
 C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\obj\Debug\net8.0\WhatsAppChat.Api.genruntimeconfig.cache
 C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\obj\Debug\net8.0\ref\WhatsAppChat.Api.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\bin\Debug\net8.0\WhatsAppChat.Application.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\bin\Debug\net8.0\WhatsAppChat.Domain.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\bin\Debug\net8.0\WhatsAppChat.Infrastructure.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\bin\Debug\net8.0\WhatsAppChat.Application.pdb
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\bin\Debug\net8.0\WhatsAppChat.Domain.pdb
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\bin\Debug\net8.0\WhatsAppChat.Infrastructure.pdb
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

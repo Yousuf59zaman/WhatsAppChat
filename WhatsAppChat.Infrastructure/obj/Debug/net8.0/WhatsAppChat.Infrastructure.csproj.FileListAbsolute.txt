@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\bin\Debug\net8.0\WhatsAppChat.Infrastructure.deps.json
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\bin\Debug\net8.0\WhatsAppChat.Infrastructure.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\bin\Debug\net8.0\WhatsAppChat.Infrastructure.pdb
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\bin\Debug\net8.0\WhatsAppChat.Domain.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\bin\Debug\net8.0\WhatsAppChat.Domain.pdb
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.AssemblyInfo.cs
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsApp.275815C9.Up2Date
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\refint\WhatsAppChat.Infrastructure.dll
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\WhatsAppChat.Infrastructure.pdb
+C:\Users\User\source\repos\WhatsAppChat\WhatsAppChat.Infrastructure\obj\Debug\net8.0\ref\WhatsAppChat.Infrastructure.dll
