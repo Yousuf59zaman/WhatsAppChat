@@ -28,6 +28,8 @@ public static class ServiceCollectionExtensions
             .AddDefaultTokenProviders();
 
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+        services.AddScoped<IContactRepository, ContactRepository>();
+        services.AddScoped<IBlockRepository, BlockRepository>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAvatarStorageService, AvatarStorageService>();
 
