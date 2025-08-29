@@ -13,7 +13,7 @@ public class BlockUserCommandHandler : IRequestHandler<BlockUserCommand>
         _blockRepository = blockRepository;
     }
 
-    public async Task Handle(BlockUserCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(BlockUserCommand request, CancellationToken cancellationToken)
     {
         var block = new Block
         {
@@ -22,5 +22,6 @@ public class BlockUserCommandHandler : IRequestHandler<BlockUserCommand>
             CreatedAt = DateTime.UtcNow
         };
         await _blockRepository.AddAsync(block);
+        return Unit.Value;
     }
 }
