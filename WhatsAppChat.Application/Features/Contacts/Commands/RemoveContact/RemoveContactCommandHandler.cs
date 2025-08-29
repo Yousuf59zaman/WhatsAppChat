@@ -12,8 +12,9 @@ public class RemoveContactCommandHandler : IRequestHandler<RemoveContactCommand>
         _contactRepository = contactRepository;
     }
 
-    public async Task Handle(RemoveContactCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(RemoveContactCommand request, CancellationToken cancellationToken)
     {
         await _contactRepository.RemoveAsync(request.OwnerUserId, request.ContactUserId);
+        return Unit.Value;
     }
 }

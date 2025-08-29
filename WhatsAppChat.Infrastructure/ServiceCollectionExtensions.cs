@@ -30,6 +30,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IContactRepository, ContactRepository>();
         services.AddScoped<IBlockRepository, BlockRepository>();
+        services.AddScoped<IConversationRepository, ConversationRepository>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAvatarStorageService, AvatarStorageService>();
 

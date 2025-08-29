@@ -12,8 +12,9 @@ public class UnblockUserCommandHandler : IRequestHandler<UnblockUserCommand>
         _blockRepository = blockRepository;
     }
 
-    public async Task Handle(UnblockUserCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UnblockUserCommand request, CancellationToken cancellationToken)
     {
         await _blockRepository.RemoveAsync(request.BlockerUserId, request.BlockedUserId);
+        return Unit.Value;
     }
 }
