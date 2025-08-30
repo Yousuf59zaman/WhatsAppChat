@@ -27,7 +27,12 @@ public class JwtTokenService : IJwtTokenService
             new Claim(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty)
         };
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.Key));
+        // HS256 requires a 256 bit key. Ensure the configured key is long enough
+        // by hashing the configured value to always produce a 256 bit key. This
+        // allows users to supply a passphrase of any length while meeting the
+        // algorithm requirements.
+        var keyBytes = SHA256.HashData(Encoding.UTF8.GetBytes(_settings.Key));
+        var key = new SymmetricSecurityKey(keyBytes);
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
         var token = new JwtSecurityToken(
             issuer: _settings.Issuer,

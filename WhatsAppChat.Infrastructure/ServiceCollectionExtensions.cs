@@ -1,4 +1,5 @@
 using System.Text;
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +36,9 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IAvatarStorageService, AvatarStorageService>();
 
         var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
-        var key = Encoding.UTF8.GetBytes(jwtSettings.Key);
+        // Hash the configured key to ensure a 256 bit key for HS256 regardless of
+        // the original length provided in configuration.
+        var key = SHA256.HashData(Encoding.UTF8.GetBytes(jwtSettings.Key));
 
         services.AddAuthentication(options =>
         {
