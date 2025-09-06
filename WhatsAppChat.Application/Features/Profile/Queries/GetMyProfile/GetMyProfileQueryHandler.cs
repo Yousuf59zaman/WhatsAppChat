@@ -1,4 +1,4 @@
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using WhatsAppChat.Application.DTOs.Profile;
 using WhatsAppChat.Domain.Entities;
@@ -19,7 +19,7 @@ public class GetMyProfileQueryHandler : IRequestHandler<GetMyProfileQuery, Profi
         var user = await _userManager.FindByIdAsync(request.UserId);
         if (user is null)
         {
-            throw new KeyNotFoundException("User not found");
+            throw new WhatsAppChat.Application.Common.Exceptions.NotFoundException("User not found");
         }
 
         return new ProfileDto(user.Id, user.DisplayName, user.AvatarUrl, user.About, user.LastSeen, user.LastSeenPrivacy.ToString());
