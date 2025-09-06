@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -32,12 +32,12 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IContactRepository, ContactRepository>();
         services.AddScoped<IBlockRepository, BlockRepository>();
         services.AddScoped<IConversationRepository, ConversationRepository>();
+        services.AddScoped<IMessageRepository, MessageRepository>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAvatarStorageService, AvatarStorageService>();
+        services.AddScoped<IAttachmentStorageService, AttachmentStorageService>();
 
         var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
-        // Hash the configured key to ensure a 256 bit key for HS256 regardless of
-        // the original length provided in configuration.
         var key = SHA256.HashData(Encoding.UTF8.GetBytes(jwtSettings.Key));
 
         services.AddAuthentication(options =>
