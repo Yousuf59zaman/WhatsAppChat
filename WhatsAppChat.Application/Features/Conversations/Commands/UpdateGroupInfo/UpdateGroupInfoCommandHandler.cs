@@ -1,4 +1,4 @@
-using MediatR;
+﻿using MediatR;
 using WhatsAppChat.Application.Common.Interfaces;
 
 namespace WhatsAppChat.Application.Features.Conversations.Commands.UpdateGroupInfo;
@@ -14,7 +14,7 @@ public class UpdateGroupInfoCommandHandler : IRequestHandler<UpdateGroupInfoComm
 
     public async Task<Unit> Handle(UpdateGroupInfoCommand request, CancellationToken cancellationToken)
     {
-        await _conversationRepository.UpdateGroupInfoAsync(request.ConversationId, request.UpdateDto.Title, request.UpdateDto.PhotoUrl);
+        // Throws NotFound or BadRequest for non-group\\r\\n        await _conversationRepository.UpdateGroupInfoAsync(request.ConversationId, request.UpdateDto.Title, request.UpdateDto.PhotoUrl);
         return Unit.Value;
     }
 }

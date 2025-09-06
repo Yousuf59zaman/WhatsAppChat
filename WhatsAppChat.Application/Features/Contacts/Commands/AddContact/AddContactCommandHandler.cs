@@ -1,4 +1,4 @@
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using WhatsAppChat.Application.Common.Interfaces;
 using WhatsAppChat.Application.DTOs.Contacts;
@@ -19,10 +19,14 @@ public class AddContactCommandHandler : IRequestHandler<AddContactCommand, Conta
 
     public async Task<ContactDto> Handle(AddContactCommand request, CancellationToken cancellationToken)
     {
+        if (request.OwnerUserId == request.ContactDto.ContactUserId)
+        {
+            throw new WhatsAppChat.Application.Common.Exceptions.BadRequestException("Cannot add yourself as a contact.");
+        }
         var user = await _userManager.FindByIdAsync(request.ContactDto.ContactUserId);
         if (user is null)
         {
-            throw new KeyNotFoundException("User not found");
+            throw new WhatsAppChat.Application.Common.Exceptions.NotFoundException("User not found");
         }
 
         var contact = new Contact

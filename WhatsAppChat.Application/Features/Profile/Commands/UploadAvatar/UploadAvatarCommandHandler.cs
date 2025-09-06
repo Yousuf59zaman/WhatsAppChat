@@ -1,4 +1,4 @@
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using WhatsAppChat.Application.Common.Interfaces;
 using WhatsAppChat.Application.DTOs.Profile;

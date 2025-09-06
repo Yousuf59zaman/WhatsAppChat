@@ -1,4 +1,4 @@
-using MediatR;
+﻿using MediatR;
 using WhatsAppChat.Application.Common.Interfaces;
 using WhatsAppChat.Application.DTOs.Conversations;
 
@@ -16,6 +16,7 @@ public class CreateOneToOneConversationCommandHandler : IRequestHandler<CreateOn
     public async Task<ConversationDto> Handle(CreateOneToOneConversationCommand request, CancellationToken cancellationToken)
     {
         var conversation = await _conversationRepository.CreateOneToOneAsync(request.CreatorUserId, request.ConversationDto.OtherUserId);
+        // Note: repository throws ConflictException if one-to-one exists
         return new ConversationDto(conversation.Id, conversation.IsGroup, conversation.Title, conversation.PhotoUrl);
     }
 }
