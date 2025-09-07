@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WhatsAppChat.Application.DTOs.Messages;
+using WhatsAppChat.Application.DTOs.Receipts;
 using WhatsAppChat.Application.Features.Messages.Commands.DeleteMessageForEveryone;
 using WhatsAppChat.Application.Features.Messages.Commands.DeleteMessageForMe;
 using WhatsAppChat.Application.Features.Messages.Commands.EditMessage;
@@ -11,6 +12,9 @@ using WhatsAppChat.Application.Features.Messages.Commands.SendAttachmentMessage;
 using WhatsAppChat.Application.Features.Messages.Commands.SendMessage;
 using WhatsAppChat.Application.Features.Messages.Queries.GetMessageById;
 using WhatsAppChat.Application.Features.Messages.Queries.GetMessagesByConversation;
+using WhatsAppChat.Application.Features.Receipts.Commands.MarkMessageDelivered;
+using WhatsAppChat.Application.Features.Receipts.Commands.MarkMessageRead;
+using WhatsAppChat.Application.Features.Receipts.Queries.GetMessageReceipts;
 
 namespace WhatsAppChat.Api.Controllers;
 
@@ -78,5 +82,25 @@ public class MessagesController : ControllerBase
         await _mediator.Send(new DeleteMessageForEveryoneCommand(GetUserId(), messageId));
         return NoContent();
     }
-}
 
+    [HttpPost("{messageId:guid}/delivered")]
+    public async Task<IActionResult> MarkDelivered(Guid messageId, MarkDeliveredDto dto)
+    {
+        var result = await _mediator.Send(new MarkMessageDeliveredCommand(GetUserId(), messageId, dto));
+        return Ok(result);
+    }
+
+    [HttpPost("{messageId:guid}/read")]
+    public async Task<IActionResult> MarkRead(Guid messageId, MarkReadDto dto)
+    {
+        var result = await _mediator.Send(new MarkMessageReadCommand(GetUserId(), messageId, dto));
+        return Ok(result);
+    }
+
+    [HttpGet("{messageId:guid}/receipts")]
+    public async Task<IActionResult> GetReceipts(Guid messageId)
+    {
+        var result = await _mediator.Send(new GetMessageReceiptsQuery(GetUserId(), messageId));
+        return Ok(result);
+    }
+}

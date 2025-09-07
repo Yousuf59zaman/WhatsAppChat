@@ -33,6 +33,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IBlockRepository, BlockRepository>();
         services.AddScoped<IConversationRepository, ConversationRepository>();
         services.AddScoped<IMessageRepository, MessageRepository>();
+        services.AddScoped<IDeliveryReceiptRepository, DeliveryReceiptRepository>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAvatarStorageService, AvatarStorageService>();
         services.AddScoped<IAttachmentStorageService, AttachmentStorageService>();
